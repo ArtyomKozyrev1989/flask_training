@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is WTF form</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content  %}
+    <h2>This is newform page</h2>
+    <form method = post>
+        {%if name%}
+        <p>We have the following NAME {{name}} and the following SURNAME {{surname}}.
+        To update them, repeat procedure </p>
+        {%else%}
+        <p>Before see anything, please input the following </p>
+        {%endif%}
+        {{ form.hidden_tag() }}
+        {{form.name.label}}  {{form.name}}
+        {{form.surname.label}}  {{form.surname}}
+        {{form.submit}}
+    </form>
+    {%endblock%}
+
+</body>
+</html>
