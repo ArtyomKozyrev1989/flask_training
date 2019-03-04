@@ -31,7 +31,7 @@ def form_result():
 
 
 @app.route('/newform', methods=['GET', 'POST'])
-def hello_route():
+def hello_new_form():
     name = False
     surname = False
     form = MyForm()
