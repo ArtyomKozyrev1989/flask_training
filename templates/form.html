@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Page Artyom</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content%}
+    <h2>This is our form page</h2>
+    <form action="{{url_for('form_result')}}">
+        <label for='name'>Give your name: </label>
+        <input type="text" name='name'>
+        <br><br>
+        <label for='surname'>Give your surname: </label>
+        <input type="text" name='surname'>
+        <br><br>
+        <input type="submit">
+    </form>
+    {% endblock %}
+</body>
+</html>
