@@ -3,14 +3,14 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] ="helloworld"
-
-
 class MyForm(FlaskForm):
-    name = StringField("Give me your name:")
-    surname = StringField("Give your surname")
-    submit = SubmitField()
+    name_field = StringField("Give your name:")
+    surname_field = StringField("Give your surname:")
+    submit_button = SubmitField("WTF_BUTTONO")
+
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = '12345udp'
 
 
 @app.route('/')
@@ -19,7 +19,7 @@ def index():
 
 
 @app.route('/form')
-def form_page():
+def form():
     return render_template('form.html')
 
 
@@ -31,17 +31,17 @@ def form_result():
 
 
 @app.route('/newform', methods=['GET', 'POST'])
-def hello_new_form():
+def new_wtf_form():
     name = False
     surname = False
     form = MyForm()
     if form.validate_on_submit():
-        name = form.name.data
-        surname = form.surname.data
-        form.name.data = ""
-        form.surname.data = ""
-    return render_template('newform.html', name=name, surname=name, form=form)
+        name = form.name_field.data
+        surname = form.surname_field.data
+        form.name_field.data = ""
+        form.surname_field.data = ""
+    return render_template('newform.html', form=form, name=name, surname=surname)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
