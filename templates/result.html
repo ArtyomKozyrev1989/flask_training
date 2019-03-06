@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Result HTML</title>
+    <title>Result Standard Form</title>
 </head>
 <body>
     {% extends 'base.html' %}
     {% block content%}
-    <h1>This is form result page</h1>
-    <h2>Hello guys and chicks!</h2>
-    <p>The name input was: {{name}}</p>
-    <p>The surname input was: {{surname}}</p>
-    {%endblock%}
+    <h2> This is standard form page result</h2>
+    The name was {{name}}, the surname was {{surname}}
+    {% endblock %}
+
 </body>
 </html>
