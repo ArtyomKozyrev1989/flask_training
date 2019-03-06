@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main page Artyom Site</title>
+    <title>Main Page, Artyom Training Site.</title>
 </head>
 <body>
-    <h1>This is crazy noob Artyom Site</h1>
-    {%block content%}
-        <h2>This is main page</h2>
-        <p>Welcome to the site of crazy noob</p>
-    {%endblock%}
+    <h1>Welcome to Artyom Training Site</h1>
+    {% block content %}
+    <h2>This is MAIN PAGE.</h2>
+    <img src="{{url_for('static', filename='pic1.png')}}" width = "200px"  height="200px">
+    {% endblock %}
     <ul>
-        <li><a href="{{url_for('form_page')}}">forms</a></li>
-        <li><a href="{{url_for('form_result')}}">form results</a></li>
-        <li><a href="{{url_for('index')}}">Main page</a></li>
-        <li><a href="{{url_for('hello_new_form')}}">Hello new form</a></li>
+        <li><a href="{{url_for('index')}}">main page</a></li>
+        <li><a href="{{url_for('form')}}">standard form</a></li>
+        <li><a href="{{url_for('form_result')}}"> result standard form</a></li>
+        <li><a href="{{url_for('new_wtf_form')}}"> WTF form</a></li>
     </ul>
-    <img src="{{url_for('static', filename='t1.png')}}" width = "200px"  height="200px">
 </body>
 </html>
