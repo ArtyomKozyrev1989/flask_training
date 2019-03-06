@@ -5,22 +5,20 @@
     <title>This is WTF form</title>
 </head>
 <body>
-    {% extends 'base.html' %}
-    {% block content  %}
-    <h2>This is newform page</h2>
-    <form method = post>
-        {%if name%}
-        <p>We have the following NAME {{name}} and the following SURNAME {{surname}}.
-        To update them, repeat procedure </p>
-        {%else%}
-        <p>Before see anything, please input the following </p>
-        {%endif%}
+    {% extends 'base.html'%}
+    {% block content %}
+    {% if name %}
+        <p> The name which was chosen is {{name}} and surname was {{surname}}</p>
+        <p> To change data, repeat the operation </p>
+    {% else %}
+        <p>Please give name and surname</p>
+    {% endif %}
+    <form method="post">
         {{ form.hidden_tag() }}
-        {{form.name.label}}  {{form.name}}
-        {{form.surname.label}}  {{form.surname}}
-        {{form.submit}}
+        {{form.name_field.label}}  {{form.name_field}}
+        {{form.surname_field.label}}  {{form.surname_field}}
+        {{form.submit_button}}
+        {% endblock %}
     </form>
-    {%endblock%}
-
 </body>
 </html>
